@@ -2,6 +2,8 @@ package com.example.vu.android;
 
 import android.app.Application;
 
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.util.List;
 
 import io.sentry.android.core.SentryAndroid;
@@ -24,6 +26,7 @@ public class MyApplication extends Application {
             // we now enable this in AndroidManifest.xml
             // options.setEnableSessionTracking(true);
 
+//            options.setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("localhost", 3001)));
             options.setBeforeSend((event, hint) -> {
 
                 //Remove PII
